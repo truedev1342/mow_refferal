@@ -68,11 +68,7 @@ const GroupList: React.FC = () => {
   const columns: GridColDef[] = [
     { field: "name", headerName: "Group Name",headerClassName:"custom-header", flex: 1 },
     { field: "location", headerName: "Location/Territory",headerClassName:"custom-header", flex: 1 },
-    { field: "owner", headerName: "Owner",headerClassName:"custom-header", flex: 1,
-      renderCell: (params) => {
-          return <span>{params.value?getOwnerName(params.value) : ""}</span>
-      },
-    },
+    { field: "owner", headerName: "Owner",headerClassName:"custom-header", flex: 1},
     {
       field: "profileStatus",
       headerName: "Profile Status",
@@ -128,7 +124,7 @@ const GroupList: React.FC = () => {
     id: group._id,
     name: group.name,
     location: group.location,
-    owner: group.owner,
+    owner: getOwnerName(group.owner),
     profileStatus: group.profileStatus,
     groupSize: group.groupSize,
     // dateCreated: group.dateCreated,
