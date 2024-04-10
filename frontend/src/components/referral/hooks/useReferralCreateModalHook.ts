@@ -35,7 +35,6 @@ const useReferralCreateModalHook = () => {
     }, []);
 
     const onSubmit: SubmitHandler<ValidationSchema> = async (data: ValidationSchema) => {
-      console.log(data);
         await createMutation.mutateAsync({...data, _id: null, receiver: receiverId});
         dispatch(
             changeModalStatus({
