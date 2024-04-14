@@ -15,6 +15,7 @@ const useUserUpdateHook = () => {
                 position: "top-right",
             });
             queryClient.invalidateQueries({queryKey: ['getAllUsers']});
+            queryClient.invalidateQueries({queryKey: ['getUserTotals']});
         },
         onError: (error: any) => {
             toast.error(`Error: ${error?.response?.data?.message}`, {
