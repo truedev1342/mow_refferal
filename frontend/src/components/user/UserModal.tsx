@@ -122,7 +122,7 @@ const UserModal: React.FC = () => {
                 <div className="flex-grow">Clan Status:</div>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <div> {/* Align ImageUpload to right */}
+                <div> {}
                   <BaseToogle register={register} status={"clanStatus"}/>
                 </div>
               </Grid>
